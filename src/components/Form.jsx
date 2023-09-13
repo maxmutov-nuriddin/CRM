@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { memo } from 'react';
 import { Button, Form } from "react-bootstrap"
 
+import { data } from '../js/data'
+
 const Forms = ({ people, validated, handlePeople, handleSubmit }) => {
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -27,13 +29,13 @@ const Forms = ({ people, validated, handlePeople, handleSubmit }) => {
         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
       </Form.Group>
       <Form.Group className='mb-4' controlId="category">
-        <Form.Control
-          onChange={handlePeople}
-          required
-          value={people.category}
-          type="text"
-          placeholder="Category"
-        />
+        <Form.Select onChange={handlePeople} value={people.category}>
+          {data.map((gr) => (
+            <option key={gr} value={gr}>
+              {gr}
+            </option>
+          ))}
+        </Form.Select>
         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
       </Form.Group>
       <Form.Group className='mb-4' controlId="quantity">
@@ -53,6 +55,7 @@ const Forms = ({ people, validated, handlePeople, handleSubmit }) => {
           value={people.description}
           type="text"
           placeholder="Description"
+          as="textarea" aria-label="With textarea"
         />
         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
       </Form.Group>
