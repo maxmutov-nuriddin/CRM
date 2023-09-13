@@ -14,7 +14,7 @@ const CrmPage = () => {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('');
   const [filter, setFilter] = useState('');
-  const [page, setPage] = useState(1); // Изменение: Устанавливаем начальное значение страницы
+  const [page, setPage] = useState(1);
   const [peoples, setPeoples] = useState(JSON.parse(peopleJson) || []);
   const [people, setPeople] = useState({
     firstName: '',
