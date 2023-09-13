@@ -29,14 +29,13 @@ const CrmPage = () => {
   const handleSubmit = useCallback(
     (event) => {
       const form = event.currentTarget;
-      setValidated(true);
       event.preventDefault();
 
       if (form.checkValidity()) {
+        setValidated(false);
         let newPeople = [...peoples, { ...people, id: v4() }]
         setPeoples(newPeople)
-        localStorage.setItem('users', JSON.stringify(newPeople))
-        setValidated(true);
+        localStorage.setItem('people', JSON.stringify(newPeople))
         setPeople({
           firstName: '',
           price: '',
@@ -44,6 +43,8 @@ const CrmPage = () => {
           quantity: '',
           description: '',
         });
+      } else {
+        setValidated(true);
       }
     },
     [people, peoples]
@@ -65,7 +66,5 @@ const CrmPage = () => {
     </div>
   )
 }
-
-
 
 export default CrmPage
