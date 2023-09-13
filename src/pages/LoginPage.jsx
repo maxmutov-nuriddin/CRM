@@ -14,7 +14,7 @@ const LoginPage = ({ setLog }) => {
 
   const submit = (e) => {
     e.preventDefault();
-    if (user.username === "312" && user.password === "012707") {
+    if (user.username === "mv_nuriddin" && user.password === "012707") {
       navigate("/");
       setLog(true)
       localStorage.setItem("logs", true);
