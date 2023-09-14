@@ -19,7 +19,7 @@ const CrmPage = () => {
   const [people, setPeople] = useState({
     firstName: '',
     price: '',
-    category: '',
+    category: 'Fruits',
     quantity: '',
     description: '',
   });
