@@ -44,7 +44,7 @@ const CrmPage = () => {
         setPeople({
           firstName: '',
           price: '',
-          category: '',
+          category: 'Fruits',
           quantity: '',
           description: '',
         });
